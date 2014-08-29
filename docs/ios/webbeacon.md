@@ -47,7 +47,7 @@ I am going to add 3 beacons. One for Work, Home and a Theater. I want to use the
 
 But as I add them I am going to associate a bit a meta data with each. This is where the real power of Proximity Kit starts to peek through. We can associate and manage data on top of beacon identifiers and have it synced to the device for you.
 
-![Add Beacon Identifiers](<%= image_path "add-beacon-values.png" %>)
+![Add Beacon Identifiers](add-beacon-values.png)
 
 
 For WebBeacon I want a URL associated with each beacon. So I will add the following to each beacon:
@@ -60,18 +60,18 @@ For WebBeacon I want a URL associated with each beacon. So I will add the follow
 
 Click "Add Meta Data Attribute":
 
-![Add Beacon Identifiers](<%= image_path "add-beacon-click.png" %>)
+![Add Beacon Identifiers](add-beacon-click.png)
 
 Then add a "url" attribute with "http://s3.proximitykit.com/doc/a.html"
 
-![Add Beacon Metadata](<%= image_path "add-beacon-metadata.png" %>)
+![Add Beacon Metadata](add-beacon-metadata.png)
 
 Just repeat this process for the other two beacons, setting a different minor value and url for each.
 
 Let's go ahead and download the framework and config file for Xcode.
 
-![download framework](<%= image_path "download-framework.png" %>)
-![download plist](<%= image_path "download-plist.png" %>)
+![download framework](download-framework.png)
+![download plist](download-plist.png)
 
 # iOS App
 
@@ -83,7 +83,7 @@ Open Xcode and:
 1. Drag `ProximityKit.framework` into the "Frameworks" folder in the Project Navigator. Make sure that "Copy items into group's folder" is checked.
 1. Drag `ProximityKit.plist` into the "Frameworks" folder" Make sure that "Copy items into group's folder" is checked.
 
-![Drag to Xcode](<%= image_path "xcode-drag.png" %>)
+![Drag to Xcode](xcode-drag.png)
 
 Cool. Now you have a skeleton Xcode project. It's a good idea to build at this point and make sure everything works.
 

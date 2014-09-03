@@ -25,17 +25,17 @@ Or keep reading for a full details.
 
 # Create a Kit
 
-In the Proximity Kit ecosystem a Kit is 1:1 to an App. Since we are going to make a new app, lets add a kit. Click on [Kits](<%= kits_path %>); it's also at the very top of the page in the navigation header. If you don't have any you will see a page like this. Click that big "Create New Kit" button.
+In the Proximity Kit ecosystem a Kit is 1:1 to an App. Since we are going to make a new app, lets add a kit. Click on [Kits](/kits); it's also at the very top of the page in the navigation header. If you don't have any you will see a page like this. Click that big "Create New Kit" button.
 
-![No Kit](<%= image_path "no-kit.png" %>)
+![No Kit](no-kit.png)
 
 Now we set the name of the Kit/App. I used "WebBeacon".
 
-![Name Kit](<%= image_path "name-kit.png" %>)
+![Name Kit](name-kit.png)
 
 Cool. Lets add some beacons. Click "Add Beacon".
 
-![Empty Kit](<%= image_path "empty-kit.png" %>)
+![Empty Kit](empty-kit.png)
 
 I am going to add 3 beacons. One for Work, Home and a Theater. I want to use the following values for each:
 
@@ -174,7 +174,7 @@ That's it. You should have an app that will respond to an iBeacon. Let's test it
 The easiest thing to use is our [MacBeacon](http://www.radiusnetworks.com/macbeacon-app.html) or the [iBeacon-CLI](https://github.com/RadiusNetworks/ibeacon-cli).
 
 Run your app on your phone (the simulator cannot detect iBeacons) then fire up MacBeacon.
-![Mac Beacon Screen](<%= image_path "mac-beacon.png" %>)
+![Mac Beacon Screen](mac-beacon.png)
 
 After the app is running turn the beacon on and within a few seconds the web view will load the webpage that was associated with the beacon.
 

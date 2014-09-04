@@ -31,11 +31,12 @@ Upon entering or leaving an Beacon or Geofence region, Proximity Kit notifies yo
 
 While Proximity Kit will work with beacons that implment iBeacon™ Technology or that follow the [AltBeacon Standard](http://altbeacon.org/). This is subject to mobile device operating system and hardware support.
 
-Of course we do build our own beacons and beleive they are the best beacon hardware out there. That is avaliable in the [Radius Networks Store](http://store.radiusnetworks.com/)
+We do build our own beacons and beleive they are the best beacon hardware out there. That is avaliable in the [Radius Networks Store](http://store.radiusnetworks.com/).
 
 There are also software alternatives to boradcasting as a beacon, a few of our apps include [Locate for iOS](https://itunes.apple.com/us/app/locate-beacon/id738709014?mt=8), [QuickBeacon](http://store.radiusnetworks.com/collections/software/products/quickbeacon) and [MacBeacon](http://store.radiusnetworks.com/collections/all/products/macbeacon).
 
 
+<p><a class="btn" href="http://store.radiusnetworks.com/">Buy Beacons</a></p>
 ---
 
 ## Android Resources

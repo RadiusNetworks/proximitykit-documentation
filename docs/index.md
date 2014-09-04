@@ -41,7 +41,7 @@ The Proximity Kit Android Library is the same as the Android Pro Library. It is 
 
 <p><a class="btn" href="http://proximitykit.com/android-download">Android SDK Download and Install</a></p>
 
-Users of the Proximity Kit client library agree to abide by the license terms as specified for <a href="proximity-kit-android-license.txt">Android</a>.
+Users of the Proximity Kit client library agree to abide by the license terms as specified for <a href="android/license">Android</a>.
 
 ## Additional Resources
 
@@ -57,13 +57,13 @@ The iOS Proximity Kit SDK is built upon Apple's CoreLocation, extending the func
 
 <p><a class="btn" href="http://proximitykit.com/download">iOS SDK Download and Install</a></p>
 
-Users of the Proximity Kit client library agree to abide by the license terms as specified for [iOS](proximity-kit-ios-license.txt).
+Users of the Proximity Kit client library agree to abide by the license terms as specified for [iOS](ios/license).
 
 ### Additional Resources
 
-<a class="btn" href="gettingstarted">Getting Started</a> <a class="btn" href="webbeacon">10 Minute Tutorial</a> <a class="btn" href="ios/docs">SDK Reference</a>
+<a class="btn" href="gettingstarted">Getting Started</a> <a class="btn" href="ios/webbeacon">10 Minute Tutorial</a> <a class="btn" href="ios/docs">SDK Reference</a>
 
-<a class="btn" href="https://github.com/RadiusNetworks/proximity-kit-ios-example">iOS Reference App</a> <a class="btn" href="ios/tracking_beacons.html">Tracking Beacons Example</a>
+<a class="btn" href="https://github.com/RadiusNetworks/proximity-kit-ios-example">iOS Reference App</a> <a class="btn" href="ios/tracking-beacons.html">Tracking Beacons Example</a>
 
 ---
 

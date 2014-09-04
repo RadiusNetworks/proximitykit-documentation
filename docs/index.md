@@ -1,3 +1,5 @@
+# Proximity Kit Documentation
+
 Designed to help developers build location aware apps. By providing a rich SDK built on top of the latest Geofence and iBeacon technology, Proximity Kit gives you the events you need to keep your app relevant and useful to your users.
 
 
@@ -47,7 +49,7 @@ Users of the Proximity Kit client library agree to abide by the license terms as
 
 ---
 
-### iOS Resources
+## iOS Resources
 
 The iOS Proximity Kit SDK is built upon Apple's CoreLocation, extending the functionality and web management.
 

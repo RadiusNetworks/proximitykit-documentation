@@ -27,13 +27,13 @@ Upon entering or leaving an iBeacon or Geofence region, Proximity Kit notifies y
 
 ## iBeacon Hardware
 
-<p>One of the best resources we have for general iBeacon information is our <a href="/blog">blog</a>. There you can find information about <a href="http://developer.radiusnetworks.com/2013/11/04/how-to-make-an-ibeacon-with-the-ti-cc2540.html">building</a> <a href="http://developer.radiusnetworks.com/2013/10/09/how-to-make-an-ibeacon-out-of-a-raspberry-pi.html">iBeacons</a>, common misconceptions about <a href="http://developer.radiusnetworks.com/2014/01/10/ibeacon-misconceptions.html">how they work</a>, as well tools to <a href="http://www.radiusnetworks.com/macbeacon-app.html">simulate</a> and <a href="http://www.radiusnetworks.com/scanbeacon-app.html">detect</a> iBeacons.</p>
+One of the best resources we have for general iBeacon information is our [blog](http://developer.radiusnetworks.com/blog/). There you can find information about [building](http://developer.radiusnetworks.com/2013/11/04/how-to-make-an-ibeacon-with-the-ti-cc2540.html) [iBeacons](http://developer.radiusnetworks.com/2013/10/09/how-to-make-an-ibeacon-out-of-a-raspberry-pi.html), common misconceptions about [how they work](http://developer.radiusnetworks.com/2014/01/10/ibeacon-misconceptions.html), as well tools to [simulate](http://www.radiusnetworks.com/macbeacon-app.html) and [detect](http://www.radiusnetworks.com/scanbeacon-app.html) iBeacons.
 
 ---
 
 ## Android Resources
 
-The Proximity Kit Android Library is the same as the Android Pro Library. It is built upon our open source <a href="/ibeacon/android/">Android iBeacon Library</a>, and all the documentation that applies to those libraries is relevant to working with Proximity Kit.
+The Proximity Kit Android Library is the same as the Android Pro Library. It is built upon our open source [Android Beacon Library](https://github.com/AltBeacon/android-beacon-library), and all the documentation that applies to those libraries is relevant to working with Proximity Kit.
 
 ### Download the SDK
 
@@ -47,29 +47,25 @@ Users of the Proximity Kit client library agree to abide by the license terms as
 
 ---
 
-<h1>iOS Resources</h1>
+### iOS Resources
 
-<p>The iOS Proximity Kit SDK is built upon Apple's CoreLocation, extending the functionality and web management.</p>
+The iOS Proximity Kit SDK is built upon Apple's CoreLocation, extending the functionality and web management.
 
-<h3>Download the SDK</h3>
+### Download the SDK
 
 <p><a class="btn" href="http://proximitykit.com/download">iOS SDK Download and Install</a></p>
 
-<p>Users of the Proximity Kit client library agree to abide by the license terms as
- specified for <a href="proximity-kit-ios-license.txt">iOS</a>.</p>
+Users of the Proximity Kit client library agree to abide by the license terms as specified for [iOS](proximity-kit-ios-license.txt).
 
-<h3>Additional Resources</h3>
+### Additional Resources
 
-<p><a class="btn" href="gettingstarted">Getting Started</a>
-<a class="btn" href="webbeacon">10 Minute Tutorial</a>
-<a class="btn" href="ios/docs">SDK Reference</a></p>
+<a class="btn" href="gettingstarted">Getting Started</a> <a class="btn" href="webbeacon">10 Minute Tutorial</a> <a class="btn" href="ios/docs">SDK Reference</a>
 
-<p><a class="btn" href="https://github.com/RadiusNetworks/proximity-kit-ios-example">iOS Reference App</a>
-<a class="btn" href="ios/tracking_beacons.html">Tracking Beacons Example</a></p>
+<a class="btn" href="https://github.com/RadiusNetworks/proximity-kit-ios-example">iOS Reference App</a> <a class="btn" href="ios/tracking_beacons.html">Tracking Beacons Example</a>
 
-<hr>
+---
 
-<h1>Still want help?</h1>
+## Still need a hand?
 
-<h3>If you have any other questions feel free to drop us a <a href="mailto:support@radiusnetworks.com">note</a>.</h3>
+If you have any other questions feel free to drop us a [note](mailto:support@radiusnetworks.com).
 

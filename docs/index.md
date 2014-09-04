@@ -6,17 +6,17 @@
 
 <div class="tiles clearfix">
   <div class="tile">
-    <img class="tile-image" src="/img/pk-configure.png">
+    <img class="tile-image" src="pk-configure.png">
     <h3>1. Configure Geofences and iBeacons in the Web Portal</h3>
     <p>Configure and manage your Geofences and iBeacons in our simple web portal. This is where you setup your kit, normally one kit per app, and set the region attributes.</p>
   </div>
   <div class="tile">
-    <img class="tile-image" src="/img/pk-cloud.png">
+    <img class="tile-image" src="pk-cloud.png">
     <h3> 2. Mobile SDK Syncs with Mobile Device </h3>
     <p> When the app starts up the Proximity Kit Manager, it will sync with our backend. As that happens the SDK will register each region to monitor. Your region data and configuration is cached and can be updated in the background.</p>
   </div>
   <div class="tile">
-    <img class="tile-image" src="/img/pk-monitor.png">
+    <img class="tile-image" src="pk-monitor.png">
     <h3> 3. Device Monitors for Proximity Events </h3>
     <p> When your app is in the background, we'll monitor for proximity events, even after the user restarts their phone. When your app is in the foreground, Proximity Kit will provide detailed information about the iBeacons or GPS coordinates around it.</p>
   </div>

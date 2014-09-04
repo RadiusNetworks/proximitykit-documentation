@@ -1,6 +1,6 @@
 # Proximity Kit Documentation
 
-Designed to help developers build location aware apps. By providing a rich SDK built on top of the latest Geofence and iBeacon technology, Proximity Kit gives you the events you need to keep your app relevant and useful to your users.
+Designed to help developers build location aware apps. By providing a rich SDK built on top of the latest Geofence and Beacon technology, Proximity Kit gives you the events you need to keep your app relevant and useful to your users.
 
 
 ## The Lifecycle of a Proximity Kit
@@ -8,8 +8,8 @@ Designed to help developers build location aware apps. By providing a rich SDK b
 <div class="tiles clearfix">
   <div class="tile">
     <img class="tile-image" src="pk-configure.png">
-    <h3>1. Configure Geofences and iBeacons in the Web Portal</h3>
-    <p>Configure and manage your Geofences and iBeacons in our simple web portal. This is where you setup your kit, normally one kit per app, and set the region attributes.</p>
+    <h3>1. Configure Geofences and Beacons in the Web Portal</h3>
+    <p>Configure and manage your Geofences and Beacons in our simple web portal. This is where you setup your kit, normally one kit per app, and set the region attributes.</p>
   </div>
   <div class="tile">
     <img class="tile-image" src="pk-cloud.png">
@@ -19,17 +19,22 @@ Designed to help developers build location aware apps. By providing a rich SDK b
   <div class="tile">
     <img class="tile-image" src="pk-monitor.png">
     <h3> 3. Device Monitors for Proximity Events </h3>
-    <p> When your app is in the background, we'll monitor for proximity events, even after the user restarts their phone. When your app is in the foreground, Proximity Kit will provide detailed information about the iBeacons or GPS coordinates around it.</p>
+    <p> When your app is in the background, we'll monitor for proximity events, even after the user restarts their phone. When your app is in the foreground, Proximity Kit will provide detailed information about the Beacons or GPS coordinates around it.</p>
   </div>
 </div>
 
-Upon entering or leaving an iBeacon or Geofence region, Proximity Kit notifies your app of the proximity event along with region identifiers and associated metadata. While in an iBeacon region, Proximity Kit provides additional ranging services for continuous proximity updates relative to the phone's distance from the iBeacon.
+Upon entering or leaving an Beacon or Geofence region, Proximity Kit notifies your app of the proximity event along with region identifiers and associated metadata. While in an Beacon region, Proximity Kit provides additional ranging services for continuous proximity updates relative to the phone's distance from the Beacon.
 
 ---
 
-## iBeacon Hardware
+## Beacon Hardware
 
-One of the best resources we have for general iBeacon information is our [blog](http://developer.radiusnetworks.com/blog/). There you can find information about [building](http://developer.radiusnetworks.com/2013/11/04/how-to-make-an-ibeacon-with-the-ti-cc2540.html) [iBeacons](http://developer.radiusnetworks.com/2013/10/09/how-to-make-an-ibeacon-out-of-a-raspberry-pi.html), common misconceptions about [how they work](http://developer.radiusnetworks.com/2014/01/10/ibeacon-misconceptions.html), as well tools to [simulate](http://www.radiusnetworks.com/macbeacon-app.html) and [detect](http://www.radiusnetworks.com/scanbeacon-app.html) iBeacons.
+While Proximity Kit will work with beacons that implment iBeacon™ Technology or that follow the [AltBeacon Standard](http://altbeacon.org/). This is subject to mobile device operating system and hardware support.
+
+Of course we do build our own beacons and beleive they are the best beacon hardware out there. That is avaliable in the [Radius Networks Store](http://store.radiusnetworks.com/)
+
+There are also software alternatives to boradcasting as a beacon, a few of our apps include [Locate for iOS](https://itunes.apple.com/us/app/locate-beacon/id738709014?mt=8), [QuickBeacon](http://store.radiusnetworks.com/collections/software/products/quickbeacon) and [MacBeacon](http://store.radiusnetworks.com/collections/all/products/macbeacon).
+
 
 ---
 

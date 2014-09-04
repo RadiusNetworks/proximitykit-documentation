@@ -1,7 +1,3 @@
----
-layout: proximitykit
----
-
 # Proximity Kit Admin API
 
 This document describes the API designed to integrate Proximity Kit with other systems. It is specifically intended to manage creation and deletion of kits, regions, the associated meta data.

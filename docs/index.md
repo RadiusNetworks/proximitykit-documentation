@@ -1,4 +1,4 @@
-# Proximity Kit Documentation
+# Proximity Kit Super Rad Documentation
 
 Designed to help developers build location aware apps. By providing a rich SDK built on top of the latest Geofence and Beacon technology, Proximity Kit gives you the events you need to keep your app relevant and useful to your users.
 

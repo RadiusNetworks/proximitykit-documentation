@@ -67,9 +67,9 @@ Users of the Proximity Kit client library agree to abide by the license terms as
 
 ### Additional Resources
 
-<a class="btn" href="gettingstarted">Getting Started</a> <a class="btn" href="ios/webbeacon">10 Minute Tutorial</a> <a class="btn" href="ios/docs">SDK Reference</a>
+<a class="btn" href="getting-started">Getting Started</a> <a class="btn" href="ios/webbeacon">10 Minute Tutorial</a> <a class="btn" href="http://developer.radiusnetworks.com/proximitykit/ios/docs/">SDK Reference</a>
 
-<a class="btn" href="https://github.com/RadiusNetworks/proximity-kit-ios-example">iOS Reference App</a> <a class="btn" href="ios/tracking-beacons.html">Tracking Beacons Example</a>
+<a class="btn" href="https://github.com/RadiusNetworks/proximity-kit-ios-example">iOS Reference App</a> <a class="btn" href="ios/tracking-beacons">Tracking Beacons Example</a>
 
 ---
 

@@ -1,10 +1,10 @@
 # Proximity Kit Tutorial
 
-### Building a simple iBeacon app with Proximity Kit
+### Building a simple beacon app with Proximity Kit
 
 Watch the video [here](http://youtu.be/Ux5R2vZBleI).
 
-One common request with proximity kit is "How can have an app show the user something when they are near an iBeacon?"
+One common request with proximity kit is "How can have an app show the user something when they are near a beacon?"
 
 Turns out this is fairly straightforward, there are a few steps. And you will be writing code, but Proximity Kit should handle the heavy lifting.
 
@@ -169,11 +169,11 @@ In the viewcontroller add a `UIWebView` to the storyboard and wire it up to an o
 }
 ```
 
-That's it. You should have an app that will respond to an iBeacon. Let's test it out.
+That's it. You should have an app that will respond to a beacon. Let's test it out.
 
-The easiest thing to use is our [MacBeacon](http://www.radiusnetworks.com/macbeacon-app.html) or the [iBeacon-CLI](https://github.com/RadiusNetworks/ibeacon-cli).
+The easiest thing to use is our [MacBeacon](http://www.radiusnetworks.com/macbeacon-app.html) or the [Locate for iOS](http://store.radiusnetworks.com/collections/all/products/locate-ibeacon-app).
 
-Run your app on your phone (the simulator cannot detect iBeacons) then fire up MacBeacon.
+Run your app on your phone (the simulator cannot detect beacons) then fire up MacBeacon.
 ![Mac Beacon Screen](mac-beacon.png)
 
 After the app is running turn the beacon on and within a few seconds the web view will load the webpage that was associated with the beacon.

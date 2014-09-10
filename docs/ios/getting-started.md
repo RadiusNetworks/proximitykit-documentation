@@ -11,7 +11,7 @@ Note: Users of the Proximity Kit client library agree to abide by the license te
 
 ## Creating a Location Manager
 
-Proximity Kit adds a wrapper around the standard Core Location Manager. This allows for automatic registering of fences and iBeacons, but should give your app all the power and control it needs to use location data.
+Proximity Kit adds a wrapper around the standard Core Location Manager. This allows for automatic registering of geofences and beacons, but should give your app all the power and control it needs to use location data.
 
 First, we need to create an instance of the `PKManager`. Each app should have only one instance of this object. For simple applications we recommend this to be a property on your Application Delegate. However, this works just fine on any class as long as the object is around for the lifetime of the application. For simplicity's sake this document will describe setting up the `AppDelegate` class to work with the `PKManager` instance.
 
@@ -71,9 +71,9 @@ From there you will have a form where you can enter GPS coordinates of your loca
 
 Note: If the location is set to coordinates within your fence when the simulator is launched you may have to set it out side of the fance and back inside again.
 
-## Simulating iBeacons
+## Simulating beacons
 
-While you can't yet simulate an iBeacon in the iPhone Simulator, you can use [MacBeacon](http://www.radiusnetworks.com/macbeacon-app.html). It makes testing iBeacon functionality easy, particularly since your Mac can broadcast as an iBeacon while running your app directly from Xcode. This is a great way to explore how the beacon behaves while in the Xcode debugger.
+While you can't yet simulate an beacon in the iPhone Simulator, you can use [MacBeacon](http://www.radiusnetworks.com/macbeacon-app.html). It makes testing iBeacon functionality easy, particularly since your Mac can broadcast as an iBeacon while running your app directly from Xcode. This is a great way to explore how the beacon behaves while in the Xcode debugger.
 
 
 

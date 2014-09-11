@@ -41,17 +41,19 @@ There are also software alternatives to boradcasting as a beacon, a few of our a
 
 ## Android Resources
 
-The Proximity Kit Android Library is the same as the Android Pro Library. It is built upon our open source [Android Beacon Library](https://github.com/AltBeacon/android-beacon-library), and all the documentation that applies to those libraries is relevant to working with Proximity Kit.
+The Android Proximity Kit SDK is currently built upon our open source
+[Android Beacon Library](https://github.com/AltBeacon/android-beacon-library).
+Which is designed to work with the [AltBeacon Standard](http://altbeacon.org/).
 
 ### Download the SDK
 
-<p><a class="btn" href="http://proximitykit.com/android-download">Android SDK Download and Install</a></p>
+<p><a class="btn" href="https://proximitykit.radiusnetworks.com/android-download">Android SDK Download and Install</a></p>
 
 Users of the Proximity Kit client library agree to abide by the license terms as specified for <a href="android/license">Android</a>.
 
 ## Additional Resources
 
-<p><a class="btn" href="/ibeacon/android/samples.html">Sample Code</a> <a class="btn" href="/ibeacon/android/pro/documentation.html">Documentation</a></p>
+<p><a class="btn" href="android/getting-started">Getting Started</a> <a class="btn" href="https://altbeacon.github.io/android-beacon-library/javadoc/index.html">Android Beacon Library Documentation</a></p>
 
 ---
 
@@ -61,7 +63,7 @@ The iOS Proximity Kit SDK is built upon Apple's CoreLocation, extending the func
 
 ### Download the SDK
 
-<p><a class="btn" href="http://proximitykit.com/download">iOS SDK Download and Install</a></p>
+<p><a class="btn" href="https://proximitykit.radiusnetworks.com/download">iOS SDK Download and Install</a></p>
 
 Users of the Proximity Kit client library agree to abide by the license terms as specified for [iOS](ios/license).
 

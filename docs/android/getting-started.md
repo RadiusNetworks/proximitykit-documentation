@@ -8,8 +8,8 @@ If you have not downloaded the Proximity Kit framework and added it to your
 project you should [go do that first](/android-download).
 
 **Note**: Users of the Proximity Kit client library agree to abide by the
-license terms as specified for [iOS](ios/license) and
-[Android](android/license).
+license terms as specified for [iOS](../ios/license) and
+[Android](license).
 
 ## Creating a Proximity Kit Manager
 

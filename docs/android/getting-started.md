@@ -25,7 +25,7 @@ location as long as the instance is around for the lifetime of the application.
 For simplicity's sake this document will describe setting up a custom
 `Application` class.
 
-**Note**: See the open source [Android Proximity Kit Refence
+**Note**: See the open source [Android Proximity Kit Reference
 app](https://github.com/RadiusNetworks/proximitykit-reference-android) for a
 more detailed sample.
 
@@ -50,7 +50,7 @@ public class AndroidProximityKitReferenceApplication extends Application {
 We want to ensure that we setup our Proximity Kit manager only after the
 application is ready for us to work with. For this reason, we'll implement an
 `onCreate` method instead of placing things in the constructor. Since
-`Applicatoin` already implements `onCreate` we need to mark it with `@Override`
+`Application` already implements `onCreate` we need to mark it with `@Override`
 and call `super`. We can then request an instance of a `ProximityKitManager`
 bound to the application instance:
 

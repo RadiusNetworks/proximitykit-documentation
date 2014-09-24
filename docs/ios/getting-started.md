@@ -4,10 +4,10 @@ This guide should get your app working with Geofencing and the Proximity Kit ser
 
 ## Download and Install
 
-If you have not downloaded the Proximity Kit framework and added it to your project you should [go do that first](<%= ios_download_path %>).
+If you have not downloaded the Proximity Kit framework and added it to your project you should [go do that first](/download).
 
 Note: Users of the Proximity Kit client library agree to abide by the license terms as
- specified for [iOS](/docs/ios/license) and [Android](/docs/android/license).
+ specified for [iOS](license) and [Android](../android/license).
 
 ## Add Location Usage String to Info.plist
 

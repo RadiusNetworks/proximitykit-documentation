@@ -54,7 +54,9 @@ Users of the Proximity Kit client library agree to abide by the license terms as
 
 ## Additional Resources
 
-<a class="btn" href="android/getting-started">Getting Started</a> <a class="btn" href="https://altbeacon.github.io/android-beacon-library/javadoc/index.html">Android Beacon Library Documentation</a>
+<a class="btn" href="android/getting-started">Getting Started</a>
+<a class="btn" href="http://developer.radiusnetworks.com/proximitykit/android/docs/0.1.0/">SDK Reference</a>
+<a class="btn" href="https://altbeacon.github.io/android-beacon-library/javadoc/index.html">Android Beacon Library Documentation</a>
 
 ---
 

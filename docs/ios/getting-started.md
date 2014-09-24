@@ -9,6 +9,21 @@ If you have not downloaded the Proximity Kit framework and added it to your proj
 Note: Users of the Proximity Kit client library agree to abide by the license terms as
  specified for [iOS](/docs/ios/license) and [Android](/docs/android/license).
 
+## Add Location Usage String to Info.plist
+
+Starting in iOS 8, all apps need to include the "location usage string" in their `Info.plist`
+
+You will need to add one of the two keys:
+
+- `NSLocationAlwaysUsageDescription`
+- `NSLocationWhenInUseUsageDescription`
+
+In most cases we recomend using `NSLocationAlwaysUsageDescription` so that Proximity Kit can continue to monitor for beacons and geofences in the background.
+
+The value of this key will be displayed to the user under Settings in the "App explanation". You will want to populate this string a short explanation why the user would want to allow sharing of their current location and proximity to beacons.
+
+An example explanation for a resturant app might be: "This app will use your location information to notify you about and access services avaliable in the resturant"
+
 ## Creating a Location Manager
 
 Proximity Kit adds a wrapper around the standard Core Location Manager. This allows for automatic registering of geofences and beacons, but should give your app all the power and control it needs to use location data.
@@ -18,6 +33,7 @@ First, we need to create an instance of the `PKManager`. Each app should have on
 In `AppDelegate.h` add the protocol for `PKManagerDelegate` and a property to store an instance of the manager:
 
 ```objective-c
+
 #import <UIKit/UIKit.h>
 #import <ProximityKit/ProximityKit.h>
 
@@ -32,6 +48,7 @@ In `AppDelegate.h` add the protocol for `PKManagerDelegate` and a property to st
 In `AppDelegate.m` allocate the manager and assign the delegate:
 
 ```objective-c
+
 - (BOOL)application:(UIApplication *)application
         didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 

@@ -28,19 +28,19 @@ An example explanation for a resturant app might be: "This app will use your loc
 
 Proximity Kit adds a wrapper around the standard Core Location Manager. This allows for automatic registering of geofences and beacons, but should give your app all the power and control it needs to use location data.
 
-First, we need to create an instance of the `PKManager`. Each app should have only one instance of this object. For simple applications we recommend this to be a property on your Application Delegate. However, this works just fine on any class as long as the object is around for the lifetime of the application. For simplicity's sake this document will describe setting up the `AppDelegate` class to work with the `PKManager` instance.
+First, we need to create an instance of the `RPKManager`. Each app should have only one instance of this object. For simple applications we recommend this to be a property on your Application Delegate. However, this works just fine on any class as long as the object is around for the lifetime of the application. For simplicity's sake this document will describe setting up the `AppDelegate` class to work with the `RPKManager` instance.
 
-In `AppDelegate.h` add the protocol for `PKManagerDelegate` and a property to store an instance of the manager:
+In `AppDelegate.h` add the protocol for `RPKManagerDelegate` and a property to store an instance of the manager:
 
 ```objective-c
 
 #import <UIKit/UIKit.h>
 #import <ProximityKit/ProximityKit.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate, PKManagerDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate, RPKManagerDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-@property (strong, nonatomic) PKManager *proximityKitManager;
+@property (strong, nonatomic) RPKManager *proximityKitManager;
 
 @end
 ```
@@ -53,14 +53,14 @@ In `AppDelegate.m` allocate the manager and assign the delegate:
         didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
     // create and start to sync the manager with the Proximity Kit backend
-    self.proximityKitManager = [PKManager managerWithDelegate:self];
+    self.proximityKitManager = [RPKManager managerWithDelegate:self];
     [self.proximityKitManager start];
 
     return YES;
 }
 ```
 
-There is more to the `PKManager` API, take a look in `PKManager.h` in the Proximity Kit framework for the full listing.
+There is more to the `RPKManager` API, take a look in `RPKManager.h` in the Proximity Kit framework for the full listing.
 
 ## Create the delegate methods
 
@@ -70,15 +70,15 @@ Within your AppDelegate class you can define either the enter or exit region met
 #pragma mark -
 #pragma mark ProximityKit delegate methods
 
-- (void)proximityKit:(PKManager *)manager didEnter:(PKRegion *)region {
+- (void)proximityKit:(RPKManager *)manager didEnter:(RPKRegion *)region {
     NSLog(@"entered %@", region);
 }
-- (void)proximityKit:(PKManager *)manager didExit:(PKRegion *)region {
+- (void)proximityKit:(RPKManager *)manager didExit:(RPKRegion *)region {
     NSLog(@"exited %@", region);
 }
 ```
 
-There are a number of other delegate methods, take a look in `PKManagerDelegate.h` in the Proximity Kit framework for the full listing.
+There are a number of other delegate methods, take a look in `RPKManagerDelegate.h` in the Proximity Kit framework for the full listing.
 
 ## Simulating Geofences
 

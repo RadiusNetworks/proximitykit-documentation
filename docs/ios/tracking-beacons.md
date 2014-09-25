@@ -15,11 +15,11 @@ NSMutableDictionary *beaconLastSeen;
     beaconLastSeen = [[NSMutableDictionary alloc] init];
 }
 
-- (void)proximityKit:(PKManager *)manager
+- (void)proximityKit:(RPKManager *)manager
      didRangeBeacons:(NSArray *)beacons
-            inRegion:(PKRegion *)region
+            inRegion:(RPKRegion *)region
 {
-    for (PKIBeacon *beacon in beacons) {
+    for (RPKIBeacon *beacon in beacons) {
         NSString *beaconKey = [NSString stringWithFormat:@"%@_%ld_%ld",
                                   [beacon.uuid UUIDString],
                                   (long) beacon.major,

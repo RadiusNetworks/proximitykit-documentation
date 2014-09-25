@@ -87,36 +87,36 @@ Open Xcode and:
 
 Cool. Now you have a skeleton Xcode project. It's a good idea to build at this point and make sure everything works.
 
-## Import and create a PKManager
+## Import and create a RPKManager
 
 Open the `AppDelegate.h` and:
 
 1. Import the ProximityKit header
-1. Add the `PKManagerDelegate` protocol
-1. Add a property to keep track of your instance of `PKManager`:
+1. Add the `RPKManagerDelegate` protocol
+1. Add a property to keep track of your instance of `RPKManager`:
 
 Your app delegate might look something like this:
 
 ```objective-c
 #import <UIKit/UIKit.h>
 
-// Import the PK Header:
+// Import the Proximity Kit Header:
 #import <ProximityKit/ProximityKit.h>
 
-// Add the PK Protocol:
-@interface AppDelegate : UIResponder <UIApplicationDelegate, PKManagerDelegate>
+// Add the RPK Protocol:
+@interface AppDelegate : UIResponder <UIApplicationDelegate, RPKManagerDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
-// Add a property for the PKManager:
-@property (strong, nonatomic) PKManager *proximityKitManager;
+// Add a property for the RPKManager:
+@property (strong, nonatomic) RPKManager *proximityKitManager;
 
 @end
 ```
 
 Open your `AppDelegate.m` and:
 
-1. Create the `PKManager`
+1. Create the `RPKManager`
 1. Implement the didEnter: callback
 
 
@@ -124,12 +124,12 @@ Open your `AppDelegate.m` and:
 -(BOOL)          application:(UIApplication *)application
 didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.proximityKitManager = [PKManager managerWithDelegate:self];
+    self.proximityKitManager = [RPKManager managerWithDelegate:self];
     [self.proximityKitManager start];
     return YES;
 }
 
--(void)proximityKit:(PKManager *)manager didEnter:(PKRegion *)region {
+-(void)proximityKit:(RPKManager *)manager didEnter:(RPKRegion *)region {
     NSString *url = region.attributes[@"url"];
     if (url) {
         // Post a notification with the URL to open

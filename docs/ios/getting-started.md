@@ -13,12 +13,11 @@ Note: Users of the Proximity Kit client library agree to abide by the license te
 
 Starting in iOS 8, all apps need to include the "location usage string" in their `Info.plist`
 
-You will need to add one of the two keys:
+You will need to add the following key:
 
 - `NSLocationAlwaysUsageDescription`
-- `NSLocationWhenInUseUsageDescription`
 
-In most cases we recomend using `NSLocationAlwaysUsageDescription` so that Proximity Kit can continue to monitor for beacons and geofences in the background.
+This is needed so that Proximity Kit can continue to monitor for beacons and geofences in the background.
 
 The value of this key will be displayed to the user under Settings in the "App explanation". You will want to populate this string a short explanation why the user would want to allow sharing of their current location and proximity to beacons.
 

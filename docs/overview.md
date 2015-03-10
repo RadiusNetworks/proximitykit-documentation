@@ -31,9 +31,9 @@ Upon entering or leaving an Beacon or Geofence region, Proximity Kit notifies yo
 
 While Proximity Kit will work with beacons that implment iBeacon™ Technology or that follow the [AltBeacon Standard](http://altbeacon.org/). This is subject to mobile device operating system and hardware support.
 
-We do build our own beacons and beleive they are the best beacon hardware out there. That is avaliable in the [Radius Networks Store](http://store.radiusnetworks.com/).
+We do build our own beacons and believe they are the best beacon hardware out there. That is avaliable in the [Radius Networks Store](http://store.radiusnetworks.com/).
 
-There are also software alternatives to boradcasting as a beacon, a few of our apps include [Locate for iOS](http://store.radiusnetworks.com/collections/all/products/locate-ibeacon-app), [QuickBeacon](http://store.radiusnetworks.com/collections/software/products/quickbeacon) and [MacBeacon](http://store.radiusnetworks.com/collections/all/products/macbeacon).
+There are also software alternatives to broadcasting as a beacon, a few of our apps include [Locate for iOS](http://store.radiusnetworks.com/collections/all/products/locate-ibeacon-app), [QuickBeacon](http://store.radiusnetworks.com/collections/software/products/quickbeacon) and [MacBeacon](http://store.radiusnetworks.com/collections/all/products/macbeacon).
 
 
 <a class="btn" href="http://store.radiusnetworks.com/">Buy Beacons</a>
@@ -55,7 +55,7 @@ Users of the Proximity Kit client library agree to abide by the license terms as
 ## Additional Resources
 
 <a class="btn" href="android/getting-started">Getting Started</a>
-<a class="btn" href="http://developer.radiusnetworks.com/proximitykit/android/docs/0.2.0/">SDK Reference</a>
+<a class="btn" href="http://developer.radiusnetworks.com/proximitykit/android/docs/0.3.0/">SDK Reference</a>
 <a class="btn" href="https://github.com/RadiusNetworks/proximitykit-reference-android">Android Studio Reference App</a>
 
 <a class="btn" href="https://altbeacon.github.io/android-beacon-library/javadoc/index.html">Android Beacon Library Documentation</a>

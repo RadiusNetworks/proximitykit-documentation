@@ -24,7 +24,7 @@ The API Key is associated with your account and has access to all the resources 
 
 Example:
 
-    curl -H 'Authorization: Token token="sandbox"' "http://proximitykit.com/api/v1.json"
+    curl -H 'Authorization: Token token="sandbox"' "https://proximitykit.radiusnetworks.com/api/v1.json"
 
 If you do not have an API key, [please contact us](mailto:support@radiusnetworks.com?subject=Proximity Kit API Token Request) for one.
 
@@ -50,7 +50,7 @@ Root Document:
 {
   "version": "1.0",
   "links": {
-    "users.kits": "http://proximitykit.com/api/v1/kits/{users.kits}"
+    "users.kits": "https://proximitykit.radiusnetworks.com/api/v1/kits/{users.kits}"
   },
   "users": [
     {
@@ -77,7 +77,7 @@ Curl Example:
        -X GET \
        -H 'Authorization: Token token="secret"' \
        -H "Content-Type: application/vnd.api+json" \
-       http://proximitykit.com/api/v1
+       https://proximitykit.radiusnetworks.com/api/v1
 ```
 
 # Kits
@@ -92,7 +92,7 @@ Return the kit resource, describing the attributes and related beacons.
 {
   "version": "1.0",
   "links": {
-    "kits.beacons": "http://proximitykit.com/api/v1/beacons/{kits.beacons}"
+    "kits.beacons": "https://proximitykit.radiusnetworks.com/api/v1/beacons/{kits.beacons}"
   },
   "kits": [
     {
@@ -120,7 +120,7 @@ Curl Example:
        -X GET \
        -H 'Authorization: Token token="secret"' \
        -H "Content-Type: application/vnd.api+json" \
-       http://proximitykit.com/api/v1/kits/52
+       https://proximitykit.radiusnetworks.com/api/v1/kits/52
 ```
 
 ## Listing Kits
@@ -133,14 +133,14 @@ Return a paginated of kit resources.
 {
   "version": "1.0",
   "meta": {
-    "current": "http://proximitykit.com/api/v1/kits?page=3",
-    "next": "http://proximitykit.com/api/v1/kits?page=4",
-    "previous": "http://proximitykit.com/api/v1/kits?page=2",
-    "first": "http://proximitykit.com/api/v1/kits?page=1",
-    "last": "http://proximitykit.com/api/v1/kits?page=10"
+    "current": "https://proximitykit.radiusnetworks.com/api/v1/kits?page=3",
+    "next": "https://proximitykit.radiusnetworks.com/api/v1/kits?page=4",
+    "previous": "https://proximitykit.radiusnetworks.com/api/v1/kits?page=2",
+    "first": "https://proximitykit.radiusnetworks.com/api/v1/kits?page=1",
+    "last": "https://proximitykit.radiusnetworks.com/api/v1/kits?page=10"
   },
   "links": {
-    "kits.beacons": "http://proximitykit.com/api/v1/beacons/{kits.beacons}"
+    "kits.beacons": "https://proximitykit.radiusnetworks.com/api/v1/beacons/{kits.beacons}"
   },
   "kits": [
     {
@@ -198,9 +198,9 @@ Curl Example:
        -H 'Authorization: Token token="secret"' \
        -H "Content-Type: application/vnd.api+json" \
        -d ' {"kits":[{ "name": "My Name" }]}'
-       http://proximitykit.com/api/v1/kits
+       https://proximitykit.radiusnetworks.com/api/v1/kits
 < HTTP/1.1 201 Created
-< Location: http://proximitykit.com/kits/56
+< Location: https://proximitykit.radiusnetworks.com/kits/56
 < Content-Type: application/vnd.api+json; charset=utf-8
 {
   "kits": [
@@ -239,7 +239,7 @@ Curl Example:
        -H 'Authorization: Token token="secret"' \
        -H "Content-Type: application/vnd.api+json" \
        -d ' {"kits":[{ "name": "Silly Name" }]}' \
-       http://proximitykit.com/api/v1/kits/56
+       https://proximitykit.radiusnetworks.com/api/v1/kits/56
 < HTTP/1.1 204 No Content
 ```
 
@@ -260,7 +260,7 @@ Curl Example:
        -X DELETE \
        -H 'Authorization: Token token="secret"' \
        -H "Content-Type: application/vnd.api+json"
-       http://proximitykit.com/api/v1/kits/56
+       https://proximitykit.radiusnetworks.com/api/v1/kits/56
 < HTTP/1.1 204 No Content
 ```
 
@@ -275,7 +275,7 @@ This will return an beacon resource.
 ```
 {
   "links": {
-    "beacons.attributes": "http://proximitykit.com/api/v1/beacon_attributes/{beacons.attributes}"
+    "beacons.attributes": "https://proximitykit.radiusnetworks.com/api/v1/beacon_attributes/{beacons.attributes}"
   },
   "beacons": [
     {
@@ -309,7 +309,7 @@ Curl Example:
        -X GET \
        -H 'Authorization: Token token="secret"' \
        -H "Content-Type: application/vnd.api+json" \
-       http://proximitykit.com/api/v1/beacons/6
+       https://proximitykit.radiusnetworks.com/api/v1/beacons/6
 ```
 
 ## Creating a beacon
@@ -335,7 +335,7 @@ Example:
 ```json
 {
   "links": {
-    "beacons.attributes": "http://proximitykit.com/api/v1/beacon_attributes/{beacons.attributes}"
+    "beacons.attributes": "https://proximitykit.radiusnetworks.com/api/v1/beacon_attributes/{beacons.attributes}"
   },
   "beacons": [
     {
@@ -360,9 +360,9 @@ Curl Example:
      -H 'Authorization: Token token="secret"' \
      -H "Content-Type: application/vnd.api+json" \
      -d '{"beacons": [{"kit_id":52, "name": "Earth 2", "uuid": "E58171D9-8398-4453-A991-5593682DDB56", "major": 1002, "minor": 1}]}' \
-     http://proximitykit.com/api/v1/beacons
+     https://proximitykit.radiusnetworks.com/api/v1/beacons
 < HTTP/1.1 201 Created
-< Location: http://proximitykit.com/api/v1/beacons/7
+< Location: https://proximitykit.radiusnetworks.com/api/v1/beacons/7
 ```
 
 ## Updating an beacon
@@ -412,7 +412,7 @@ Curl Example:
        -X DELETE \
        -H 'Authorization: Token token="secret"' \
        -H "Content-Type: application/vnd.api+json" \
-       http://proximitykit.com/api/v1/beacons/7
+       https://proximitykit.radiusnetworks.com/api/v1/beacons/7
 < HTTP/1.1 204 No Content
 ```
 
@@ -443,7 +443,7 @@ Curl Example:
        -X GET \
        -H 'Authorization: Token token="secret"' \
        -H "Content-Type: application/vnd.api+json" \
-       http://proximitykit.com/api/v1/beacon_attributes/4
+       https://proximitykit.radiusnetworks.com/api/v1/beacon_attributes/4
 ```
 
 ## Creating an attribute
@@ -481,9 +481,9 @@ Example:
        -H 'Authorization: Token token="secret"' \
        -H "Content-Type: application/vnd.api+json" \
        -d '{ "beacon_attributes": [ { "beacon_id": 5, "key": "venue", "value": "spaceship" } ]}' \
-       http://proximitykit.com/api/v1/beacon_attributes
+       https://proximitykit.radiusnetworks.com/api/v1/beacon_attributes
 < HTTP/1.1 201 Created
-< Location: http://proximitykit.com/api/v1/beacon_attributes/5.5
+< Location: https://proximitykit.radiusnetworks.com/api/v1/beacon_attributes/5.5
 ```
 
 ## Updating an attribute
@@ -521,7 +521,7 @@ Curl Example:
        -H 'Authorization: Token token="secret"' \
        -H "Content-Type: application/vnd.api+json" \
        -d '{ "beacon_attributes": [ { "key": "venue", "value": "spaceship with dinosaurs" } ]}' \
-       http://proximitykit.com/api/v1/beacon_attributes/5
+       https://proximitykit.radiusnetworks.com/api/v1/beacon_attributes/5
 < HTTP/1.1 204 No Content
 ```
 
@@ -538,7 +538,7 @@ Curl Example:
        -X DELETE \
        -H 'Authorization: Token token="secret"' \
        -H "Content-Type: application/vnd.api+json" \
-       http://proximitykit.com/api/v1/beacon_attributes/4
+       https://proximitykit.radiusnetworks.com/api/v1/beacon_attributes/4
 < HTTP/1.1 204 No Content
 ```
 

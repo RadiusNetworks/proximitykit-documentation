@@ -42,7 +42,7 @@ First, we need to create an instance of the `RPKManager`. Each app should have o
 
 In `AppDelegate.h` add the protocol for `RPKManagerDelegate` and a property to store an instance of the manager:
 
-```objective-c
+```objc
 
 #import <UIKit/UIKit.h>
 #import <ProximityKit/ProximityKit.h>

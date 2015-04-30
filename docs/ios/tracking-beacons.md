@@ -6,7 +6,7 @@ before, and how long ago it was. Simply replace the NSLog statements below
 with custom logic of what you wish to do when a beacon is newly seen, or if a
 certain amount of time has passed since one was seen.
 
-```objective-c
+```objc
 NSMutableDictionary *beaconLastSeen;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions

@@ -97,7 +97,7 @@ Open the `AppDelegate.h` and:
 
 Your app delegate might look something like this:
 
-```objective-c
+```objc
 #import <UIKit/UIKit.h>
 
 // Import the Proximity Kit Header:
@@ -120,7 +120,7 @@ Open your `AppDelegate.m` and:
 1. Implement the didEnter: callback
 
 
-```objective-c
+```objc
 -(BOOL)          application:(UIApplication *)application
 didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -146,7 +146,7 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 
 In the viewcontroller add a `UIWebView` to the storyboard and wire it up to an outlet. Then in the controller listen for the the notification:
 
-```objective-c
+```objc
 -(void)viewDidLoad
 {
     [super viewDidLoad];

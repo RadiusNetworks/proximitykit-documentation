@@ -57,7 +57,7 @@ In `AppDelegate.h` add the protocol for `RPKManagerDelegate` and a property to s
 
 In `AppDelegate.m` allocate the manager and assign the delegate:
 
-```objective-c
+```objc
 
 - (BOOL)application:(UIApplication *)application
         didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -76,7 +76,7 @@ There is more to the `RPKManager` API, take a look in `RPKManager.h` in the Prox
 
 Within your AppDelegate class you can define either the enter or exit region methods, which will be called when the app enters or exits a fence.
 
-```objective-c
+```objc
 #pragma mark -
 #pragma mark ProximityKit delegate methods
 

@@ -27,7 +27,7 @@ This can be done by:
 - Edit the Region
 - Click on the "Add Meta Data Attribute"
 - Set the key to `ua_tags`
-- Set the value to a comma separated list of tags
+- Set the value to a comma-separated list of tags
 
 Now any devices that encounter that region will add those tags upon entering, and remove them when they exit.
 

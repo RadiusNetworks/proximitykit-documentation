@@ -31,6 +31,21 @@ This can be done by:
 
 Now any devices that encounter that region will add those tags upon entering, and remove them when they exit.
 
+# Persistent Tags
+
+Persistent Tags work the same way as Tags, but are not removed when the device exits the region.
+
+To add persistent tags in Urban Airship, you will need to add a `ua_persistent_tags` meta data attribute to your region.
+
+This can be done by:
+
+- Edit the Region
+- Click on the "Add Meta Data Attribute"
+- Set the key to `ua_persistent_tags`
+- Set the value to a comma-separated list of tags
+
+Now any devices that encounter that region will add those tags upon entering, leaving them associated with the device indefinitely.
+
 # Events
 
 Urban Airship uses [Custom Events](http://docs.urbanairship.com/topic-guides/custom-events.html) to let you track user activities and conversions. Proximity Kit will create events and publish them to the Urban Airship SDK as devices enter regions. This will let you use their proximity as an indication of the success of the push messaging campaigns.

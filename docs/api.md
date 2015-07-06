@@ -6,9 +6,7 @@ Data synchronization, communicating with the SDKs, configuring hardware is not p
 
 ## Overview
 
-The Proximity Kit API follows the [JSON API](http://jsonapi.org/format/) format.
-
-JSON API uses IDs for linkage, which makes it possible to cache documents from compound responses and then limit subsequent requests to only the documents that aren't already present locally.
+This API uses IDs for linkage, which makes it possible to cache documents from compound responses and then limit subsequent requests to only the documents that aren't already present locally.
 
 Resource relationships are created through the use of URI templates and resource identifiers. To prevent future breakage we recommend creating the URIs from the templates over hardcoding to the individual resources.
 
@@ -26,7 +24,7 @@ Example:
 
     curl -H 'Authorization: Token token="sandbox"' "https://proximitykit.radiusnetworks.com/api/v1.json"
 
-If you do not have an API key, [please contact us](mailto:support@radiusnetworks.com?subject=Proximity Kit API Token Request) for one.
+API Tokens can be managed in your [Radius Networks Account Profile](https://account.radiusnetworks.com/personal_tokens).
 
 Note: Per [RFC 2616](http://www.w3.org/Protocols/rfc2616/rfc2616-sec2.html#sec2.2) the Authorization Header's token needs to be surrounded by double quotes (`"`).
 

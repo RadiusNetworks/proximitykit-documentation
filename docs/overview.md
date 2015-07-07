@@ -80,6 +80,12 @@ Users of the Proximity Kit client library agree to abide by the license terms as
 
 ---
 
+## RESTful Admin API
+
+The [Proximity Kit API](api) provides programmable access to the rich content about your App's Kit. It is designed to integrate Proximity Kit with other systems. It is specifically intended to provide access to the features and functionality available through the web interface.
+
+---
+
 ## Still need a hand?
 
 If you have any other questions feel free to drop us a [note](mailto:support@radiusnetworks.com).

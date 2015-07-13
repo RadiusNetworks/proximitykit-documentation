@@ -90,25 +90,28 @@ Return the kit resource, describing the attributes and related beacons.
 {
   "version": "1.0",
   "links": {
-    "kits.beacons": "https://proximitykit.radiusnetworks.com/api/v1/beacons/{kits.beacons}"
+    "kits.beacons": "https://proximitykit.radiusnetworks.com/api/v1/beacons/{kits.beacons}",
+    "kits.circle_overlays": "https://proximitykit.radiusnetworks.com/api/v1/circle_overlays/{kits.circle_overlays}"
   },
   "kits": [
     {
       "name": "Ancient Rome",
       "id": 52,
       "links": {
-        "beacons": [2,3,4,5]
+        "beacons": [2,3,4,5],
+        "circle_overlays": [3,4,5,6]
       }
     }
   ]
 }
 ```
 
-Key                     | Value
------------------------ | ------------------------------------------
-`version`               | The media type version
-`links[kits.beacons]`   | The url template for an beacon resource
-`kits[links][beacons]`  | List of kit IDs that belong to a user
+Key                             | Value
+------------------------------- | ------------------------------------------
+`version`                       | The media type version
+`links[kits.beacons]`           | The url template for an beacon resource
+`links[kits.circle_overlays]`   | The url template for a geofence circle overlay resource
+`kits[links][beacons]`          | List of kit IDs that belong to a user
 
 
 Curl Example:
@@ -540,3 +543,151 @@ Curl Example:
 < HTTP/1.1 204 No Content
 ```
 
+# Circle Overlays
+
+## Circle Overlay Resource
+
+`GET /api/v1/circle_overlays/:id`
+
+This will return a circle overlay resource.
+
+```
+{
+   "circle_overlays" : [
+      {
+         "id" : 7,
+         "name" : "Headquarters",
+         "radius" : 80.704567,
+         "links" : {
+            "kit" : 4,
+            "attributes" : [],
+            "self" : "https://proximitykit.radiusnetworks.com/api/v1/circle_overlays/760"
+         },
+         "center_longitude" : -77.066093,
+         "center_latitude" : 38.904539
+      }
+   ],
+   "links" : {
+      "circle_overlays.kit" : "https://proximitykit.radiusnetworks.com/api/v1/kits/{circle_overlays.kit}",
+      "circle_overlays.attributes" : "https://proximitykit.radiusnetworks.com/api/v1/circle_overlay_attributes/{circle_overlays.attributes}"
+   }
+}
+```
+
+Key                           | Value
+----------------------------- | ---------------------------------------------------
+`version`                     | The media type version
+`links[circle_overlays.attributes]`   | The url template for a circle overlay attribute resource
+`circle_overlays[name]`               | Display name for the circle overlay
+`circle_overlays[radius]`             | Radius of the geofence in meters
+`circle_overlays[center_longitude]`   | longitude of the center point
+`circle_overlays[center_latitude]`    | latitude of the center point
+`circle_overlays[links][attributes]`  | List of attribute IDs that belong to the circle overlay
+
+Curl Example:
+
+```
+% curl -s \
+       -X GET \
+       -H 'Authorization: Token token="secret"' \
+       -H "Content-Type: application/vnd.api+json" \
+       https://proximitykit.radiusnetworks.com/api/v1/circle_overlays/6
+```
+
+## Creating a Circle Overlay
+
+To create a circle overlay make a POST request to the `/api/v1/circle_overlays/:id`
+
+Parameters
+
+Parameter | Description                  | &nbsp;
+--------- | -----------                  | ------
+`kit_id`  | The ID of the associated kit | Required
+`name`               | Display name for the circle overlay |
+`radius`             | Radius of the geofence in meters | required
+`center_longitude`   | longitude of the center point | required
+`center_latitude`    | latitude of the center point | required
+
+`POST /api/v1/circle_overlays`
+
+The response will include the JSON representation of the newly created kit as well as a `Location` header with the URI of the resource.
+
+Example:
+
+```json
+{
+  "circle_overlays": [
+    {
+      "kit_id": 6,
+      "name" : "Headquarters",
+      "radius" : 80.704567,
+      "center_longitude" : -77.066093,
+      "center_latitude" : 38.904539
+    }
+  ]
+}
+```
+
+Curl Example:
+
+```
+% curl -sv \
+     -X POST \
+     -H 'Authorization: Token token="secret"' \
+     -H "Content-Type: application/vnd.api+json" \
+     -d '{"circle_overlays": [{"kit_id":52, "name" : "Headquarters", "radius" : 80.704567, "center_longitude" : -77.066093, "center_latitude" : 38.904539 }]}' \
+     https://proximitykit.radiusnetworks.com/api/v1/circle_overlays
+< HTTP/1.1 201 Created
+< Location: https://proximitykit.radiusnetworks.com/api/v1/circle_overlays/7
+```
+
+## Updating a Circle Overlay
+
+To update a circle overlay make a put request `/api/v1/circle_overlays/:id`
+
+Parameters
+
+Parameter | Description                  | &nbsp;
+--------- | -----------                  | ------
+`kit_id`  | The ID of the associated kit | Required
+`name`               | Display name for the circle overlay |
+`radius`             | Radius of the geofence in meters | required
+`center_longitude`   | longitude of the center point | required
+`center_latitude`    | latitude of the center point | required
+
+
+`PUT /api/v1/circle_overlay/{circle_overlay_id}`
+
+Example:
+
+```
+{
+  "circle_overlays": [
+    {
+      "kit_id": 1,
+      "name" : "Headquarters",
+      "radius" : 80.704567,
+      "center_longitude" : -77.066093,
+      "center_latitude" : 38.904539
+    }
+  ]
+}
+```
+
+
+## Deleting a Circle Overlay
+
+To delete a circle overlay make a delete request to `api/v1/circle_overlays/:id`.
+
+`DELETE /api/v1/circle_overlays/:id`
+
+Curl Example:
+
+```
+% curl -sv \
+       -X DELETE \
+       -H 'Authorization: Token token="secret"' \
+       -H "Content-Type: application/vnd.api+json" \
+       https://proximitykit.radiusnetworks.com/api/v1/circle_overlays/7
+< HTTP/1.1 204 No Content
+```

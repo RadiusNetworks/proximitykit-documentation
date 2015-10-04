@@ -300,7 +300,7 @@ Key                           | Value
 `beacons[name]`               | Display name for the beacon
 `beacons[uuid]`               | Orgnization level proximity identifier
 `beacons[major]`              | Group level proximity identifier
-`beacons[minor]`              | Physical beacion proximity identifier
+`beacons[minor]`              | Physical beacon proximity identifier
 `beacons[links][attributes]`  | List of attribute IDs that belong to the beacon
 
 Curl Example:

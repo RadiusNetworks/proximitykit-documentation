@@ -51,7 +51,7 @@ statically compiled into your source, or load via another mechanism of your
 choice..
 
 For newer Android applications, we suggest simply adding the file as an
-_asset_ (e.g. placed in [`PROJECT_ROOT/app/src/assets`](https://github.com/RadiusNetworks/proximitykit-reference-android/tree/master/AndroidProximityKitReferenceApplication/src/main/assets)).
+_asset_ (e.g. placed in [`PROJECT_ROOT/app/src/assets`](https://github.com/RadiusNetworks/proximitykit-reference-android/tree/master/AndroidProximityKitReference/src/main/assets)).
 This is a standard Android location. It allows us to load the file by name with
 minimal code. We'll put this in a helper place in our custom `Application`
 class:

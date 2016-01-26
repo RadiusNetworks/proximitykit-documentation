@@ -145,6 +145,88 @@ public class AndroidProximityKitReferenceApplication extends Application {
 }
 ```
 
+
+
+
+## Targeting Android 6 (API level/SDK version 23) and higher
+
+If you decide to target Android 6+ you will need to [request runtime
+permissions](http://developer.radiusnetworks.com/2015/09/29/is-your-beacon-app-ready-for-android-6.html).
+This will be necessary if you want to detect beacons in the background and/or
+use geofences.
+
+When and how to ask for permissions is a decision best left up to you - the app
+developer. Google provides some handy
+[patterns](https://www.google.com/design/spec/patterns/permissions.html) for
+when and how to request permissions within your app.
+
+Our [reference app](https://github.com/RadiusNetworks/proximitykit-reference-android)
+has implemented a very [basic approach](https://github.com/RadiusNetworks/proximitykit-reference-android/blob/master/AndroidProximityKitReference/src/main/java/com/radiusnetworks/androidproximitykitreference/MainActivity.java).
+Geofences and background beacon detection are core to the app's functionality.
+So we've decided to request permissions up front when the activity is created.
+
+```java
+public class MainActivity extends ActionBarActivity {
+    public static final String TAG = "MainActivity";
+    public static boolean isRunning = false;
+    private static final int PERMISSION_REQUEST_FINE_LOCATION = 1;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            // Android M Permission check
+            if (checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                builder.setTitle("This app needs location access");
+                builder.setMessage("Please grant location access so this app can detect beacons in the background.");
+                builder.setPositiveButton(android.R.string.ok, null);
+                builder.setOnDismissListener(
+                        new DialogInterface.OnDismissListener() {
+                            @TargetApi(23)
+                            @Override
+                            public void onDismiss(DialogInterface dialogInterface) {
+                                requestPermissions(
+                                        new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
+                                        PERMISSION_REQUEST_FINE_LOCATION
+                                );
+                            }
+                        }
+                );
+                builder.show();
+            }
+        }
+    }
+
+    @TargetApi(Build.VERSION_CODES.M)
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
+        switch (requestCode) {
+            case PERMISSION_REQUEST_FINE_LOCATION: {
+                if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    Log.d(TAG, "coarse location permission granted");
+                } else {
+                    final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                    builder.setTitle("Functionality limited");
+                    builder.setMessage("Since location access has not been granted, this app will not be able to discover beacons when in the background.");
+                    builder.setPositiveButton(android.R.string.ok, null);
+                    builder.setOnDismissListener(new DialogInterface.OnDismissListener() {
+                        @Override
+                        public void onDismiss(DialogInterface dialog) {
+                        }
+                    });
+                    builder.show();
+                }
+                return;
+            }
+        }
+    }
+}
+```
+
+Lastly, be sure to review the latest [guides](https://developer.android.com/training/permissions/index.html) on requesting permissions.
+
 ## Working with Beacons
 
 If you compile and run your application at this point it should work. There

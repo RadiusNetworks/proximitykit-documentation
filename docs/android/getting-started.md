@@ -234,19 +234,19 @@ definition to do this:
 public void onCreate() {
     super.onCreate();
 
-    // Hold a reference to the Proximity Kit manager to access the kit later
-    pkManager = ProximityKitManager.getInstanceForApplication(this);
-
-    // If you wish to see the debug messages turn them on now
-    pkManager.debugOn();
+    synchronized (pkManagerLock) {
+        if (pkManager == null) {
+            pkManager = ProximityKitManager.getInstance(this, loadConfig());
+        }
+    }
 
     // Set any/all desired notification callbacks
     pkManager.setProximityKitMonitorNotifier(this);
 
     /*
      * Now that everything is configured start the Proximity Kit Manager.
-     * This syncs with the Proximity Kit cloud and ensures necessary adapters
-     * are initialized.
+     * This syncs with the Proximity Kit cloud servers and ensures necessary
+     * adapters are initialized.
      */
     pkManager.start();
 }
@@ -368,11 +368,11 @@ start the Proximity Kit manager:
 public void onCreate() {
     super.onCreate();
 
-    // Hold a reference to the Proximity Kit manager to access the kit later
-    pkManager = ProximityKitManager.getInstanceForApplication(this);
-
-    // If you wish to see the debug messages turn them on now
-    pkManager.debugOn();
+    synchronized (pkManagerLock) {
+        if (pkManager == null) {
+            pkManager = ProximityKitManager.getInstance(this, loadConfig());
+        }
+    }
 
     /*
      * It is our job (the app) to ensure that Google Play services is
@@ -394,8 +394,8 @@ public void onCreate() {
 
     /*
      * Now that everything is configured start the Proximity Kit Manager.
-     * This syncs with the Proximity Kit cloud and ensures necessary adapters
-     * are initialized.
+     * This syncs with the Proximity Kit cloud servers and ensures necessary
+     * adapters are initialized.
      */
     pkManager.start();
 }
@@ -489,11 +489,11 @@ method to tell the Proximity Kit manager to send us the notifications:
 public void onCreate() {
     super.onCreate();
 
-    // Hold a reference to the Proximity Kit manager to access the kit later
-    pkManager = ProximityKitManager.getInstanceForApplication(this);
-
-    // If you wish to see the debug messages turn them on now
-    pkManager.debugOn();
+    synchronized (pkManagerLock) {
+        if (pkManager == null) {
+            pkManager = ProximityKitManager.getInstance(this, loadConfig());
+        }
+    }
 
     /*
      * It is our job (the app) to ensure that Google Play services is
@@ -518,8 +518,8 @@ public void onCreate() {
 
     /*
      * Now that everything is configured start the Proximity Kit Manager.
-     * This syncs with the Proximity Kit cloud and ensures necessary adapters
-     * are initialized.
+     * This syncs with the Proximity Kit cloud servers and ensures necessary
+     * adapters are initialized.
      */
     pkManager.start();
 }

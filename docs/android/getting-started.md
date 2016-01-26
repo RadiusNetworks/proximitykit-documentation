@@ -18,16 +18,20 @@ Library](https://github.com/AltBeacon/android-beacon-library).  This allows for
 automatic registering of beacons, but should give your app all the power and
 control it needs to use location data.
 
-First, we need to create an instance of the `ProximityKitManager`. Each app
-should have only one instance of this object. We suggest using a custom
-application class to store this instance. However, you can store this in any
-location as long as the instance is around for the lifetime of the application.
-For simplicity's sake this document will describe setting up a custom
-`Application` class.
+Currently the Proximity Kit for Android library manages a singleton instance of
+a `ProximityKitManager` for you. However, this will not always be the case. We
+_strongly_ suggest you spend the time to setup your own singleton instance now.
+This will greatly help ease future upgrade. Note to get proper background and
+on boot beacon detection the singleton reference must be stored in a manner
+that keeps it around for the full application lifetime.
+
+For simplicity in this guide, we will manage our singleton in a [custom `Application` subclass](https://github.com/RadiusNetworks/proximitykit-reference-android/blob/master/AndroidProximityKitReference/src/main/java/com/radiusnetworks/androidproximitykitreference/AndroidProximityKitReferenceApplication.java).
+If your project does not already have one create a new class in your source
+directory which `extends Application`.
 
 **Note**: See the open source [Android Proximity Kit Reference
 app](https://github.com/RadiusNetworks/proximitykit-reference-android) for a
-more detailed sample.
+full sample app.
 
 In the editor of your choice, create a new class in your default package. For
 this guide, our main application module will be called
@@ -35,42 +39,109 @@ this guide, our main application module will be called
 `AndroidProximityKitReferenceApplication`. Be sure to set the parent class to
 `Application`.
 
-Add a `private` field to hold the instance of the `ProximityKitManager`:
+```java
+public class AndroidProximityKitReferenceApplication extends Application {
+}
+```
+
+To initialize the Proximity Kit manager you will need the configuration
+settings for your kit. These can be downloaded from the Proximity Kit server as
+a `.properties` file. These settings can be loaded directly from the file,
+statically compiled into your source, or load via another mechanism of your
+choice..
+
+For newer Android applications, we suggest simply adding the file as an
+_asset_ (e.g. placed in [`PROJECT_ROOT/app/src/assets`](https://github.com/RadiusNetworks/proximitykit-reference-android/tree/master/AndroidProximityKitReferenceApplication/src/main/assets)).
+This is a standard Android location. It allows us to load the file by name with
+minimal code. We'll put this in a helper place in our custom `Application`
+class:
 
 ```java
-import com.radiusnetworks.proximity.ProximityKitManager;
+private KitConfig loadConfig() {
+    Properties properties = new Properties();
+    try {
+        properties.load(getAssets().open("ProximityKit.properties"));
+    } catch (IOException e) {
+        throw new IllegalStateException("Unable to load properties file!", e);
+    }
+    return new KitConfig(properties);
+}
+```
 
-public class AndroidProximityKitReferenceApplication extends Application {
+Older apps which upgrade are likely treating the `.properties` file as a
+resource (e.g. `PROJECT_ROOT/app/src/resources`). If you do not wish to
+migrate to `/assets` or simply prefer using Java resources, replace the above
+method with the following:
 
-    private ProximityKitManager pkManager = null;
-
+```java
+private KitConfig loadConfig() {
+    Properties properties = new Properties();
+    InputStream in = getClassLoader().getResourceAsStream("ProximityKit.properties");
+    if (in == null) {
+        throw new IllegalStateException("Unable to find ProximityKit.properties files");
+    }
+    try {
+        properties.load(in);
+    } catch (IOException e) {
+        throw new IllegalStateException("Unable to load properties file!", e);
+    }
+    return new KitConfig(properties);
 }
 ```
 
 We want to ensure that we setup our Proximity Kit manager only after the
 application is ready for us to work with. For this reason, we'll implement an
 `onCreate` method instead of placing things in the constructor. Since
-`Application` already implements `onCreate` we need to mark it with `@Override`
-and call `super`. We can then request an instance of a `ProximityKitManager`
-bound to the application instance:
+`Application` already implements `onCreate` we mark it with `@Override` and
+call `super` to ensure the core functionality is preserved.
+
+To ensure we have a singleton instance we'll use the standard single-lock
+pattern. We are not using a double-lock pattern as we are not lazy loading the
+instance so there is no need to try to avoid the synchronization penalty at
+runtime. This means we create both a lock and the manager instance as
+`private static` fields:
 
 ```java
-@Override
-public void onCreate() {
-    super.onCreate();
+public class AndroidProximityKitReferenceApplication extends Application {
 
-    // Hold a reference to the Proximity Kit manager to access the kit later
-    pkManager = ProximityKitManager.getInstanceForApplication(this);
-
-    // If you wish to see the debug messages turn them on now
-    pkManager.debugOn();
-
-    /*
-     * Now that everything is configured start the Proximity Kit Manager.
-     * This syncs with the Proximity Kit cloud and ensures necessary adapters
-     * are initialized.
+    /**
+     * Singleton storage for an instance of the manager
      */
-    pkManager.start();
+    private static ProximityKitManager pkManager = null;
+
+    /**
+     * Object to use as a thread-safe lock
+     */
+    private static final Object pkManagerLock = new Object();
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+
+        synchronized (pkManagerLock) {
+            if (pkManager == null) {
+                pkManager = ProximityKitManager.getInstance(this, loadConfig());
+            }
+        }
+
+        /*
+         * Now that everything is configured start the Proximity Kit Manager.
+         * This syncs with the Proximity Kit cloud servers and ensures necessary
+         * adapters are initialized.
+         */
+        pkManager.start();
+    }
+
+    private KitConfig loadConfig() {
+        Properties properties = new Properties();
+        try {
+            properties.load(getAssets().open("ProximityKit.properties"));
+        } catch (IOException e) {
+            throw new IllegalStateException("Unable to load properties file!", e);
+        }
+        return new KitConfig(properties);
+    }
+
 }
 ```
 

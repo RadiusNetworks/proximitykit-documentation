@@ -79,9 +79,9 @@ Users of the Proximity Kit client library agree to abide by the license terms as
 <a class="btn" href="https://github.com/RadiusNetworks/proximity-kit-ios-example">iOS Reference App</a> <a class="btn" href="ios/tracking-beacons">Tracking Beacons Example</a>
 
 ---
-## Activating Status Kit
+## Activating Director
 
-After integrating Proximity Kit for iOS or/and Android, follow the steps below to activate Status Kit and begin to monitor the health status of every beacon in your fleet.
+After integrating Proximity Kit for iOS or/and Android, follow the steps below to activate Director and begin to monitor the health status of every beacon in your fleet.
 
 1. Login to your Radius Networks <a href="https://account.radiusnetworks.com"> Account</a> and click on "Team Settings".
 2. On the "Team Settings" page, click on "New Team", enter the "Team Name" and click on "create".

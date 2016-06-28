@@ -62,7 +62,7 @@ Users of the Proximity Kit client library agree to abide by the license terms as
 
 ---
 
-## etting Started with Proximity Kit On iOS
+## Getting Started with Proximity Kit On iOS
 
 The iOS Proximity Kit SDK is built upon Apple's CoreLocation, extending the functionality and web management.
 

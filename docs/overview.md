@@ -94,6 +94,7 @@ After integrating Proximity Kit for iOS or/and Android, follow the steps below t
 9. Click save.
 
 You are done! Next time your app syncs with Proximity Kit, Status Kit will be automatically enabled.
+
 ---
 ## RESTful Admin API
 

@@ -40,7 +40,7 @@ There are also software alternatives to broadcasting as a beacon, a few of our a
 
 ---
 
-## Android Resources
+## Getting Started with Proximity Kit On Android
 
 The Android Proximity Kit SDK is currently built upon our open source
 [Android Beacon Library](https://github.com/AltBeacon/android-beacon-library).
@@ -62,7 +62,7 @@ Users of the Proximity Kit client library agree to abide by the license terms as
 
 ---
 
-## iOS Resources
+## etting Started with Proximity Kit On iOS
 
 The iOS Proximity Kit SDK is built upon Apple's CoreLocation, extending the functionality and web management.
 

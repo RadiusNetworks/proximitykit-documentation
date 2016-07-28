@@ -40,7 +40,7 @@ There are also software alternatives to broadcasting as a beacon, a few of our a
 
 ---
 
-## Android Resources
+## Getting Started with Proximity Kit On Android
 
 The Android Proximity Kit SDK is currently built upon our open source
 [Android Beacon Library](https://github.com/AltBeacon/android-beacon-library).
@@ -62,7 +62,7 @@ Users of the Proximity Kit client library agree to abide by the license terms as
 
 ---
 
-## iOS Resources
+## Getting Started with Proximity Kit On iOS
 
 The iOS Proximity Kit SDK is built upon Apple's CoreLocation, extending the functionality and web management.
 
@@ -79,7 +79,23 @@ Users of the Proximity Kit client library agree to abide by the license terms as
 <a class="btn" href="https://github.com/RadiusNetworks/proximity-kit-ios-example">iOS Reference App</a> <a class="btn" href="ios/tracking-beacons">Tracking Beacons Example</a>
 
 ---
+## Activating Director
 
+After integrating Proximity Kit for iOS or/and Android, follow the steps below to activate Director and begin to monitor the health status of every beacon in your fleet.
+
+1. Login to your Radius Networks <a href="https://account.radiusnetworks.com"> Account</a> and click on "Team Settings".
+2. On the "Team Settings" page, click on "New Team", enter the "Team Name" and click on "create".
+3. From the account page, click on "Director", and select "Settings" from under the new team you just created.
+4. Under "SDK Access Tokens", click on "Generate Token".
+5. Copy the newly generated token.
+6. Go back to the accounts home page and click on "Proximity Kit".
+7. On the Proximity Kit page, click on "Create New Kit".
+8. Enter you "Kit name", ensure "Explicit Beacon Monitoring" is checked and paste the "Status Token" you copied from Director.
+9. Click save.
+
+You are done! Next time your app syncs with Proximity Kit, Status Kit will be automatically enabled.
+
+---
 ## RESTful Admin API
 
 The [Proximity Kit API](api) provides programmable access to the rich content about your App's Kit. It is designed to integrate Proximity Kit with other systems. It is specifically intended to provide access to the features and functionality available through the web interface.

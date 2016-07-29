@@ -1,5 +1,5 @@
 
-# Download the Proximity Kit iOS SDK
+# Download the Proximity Kit Android SDK
 
 By downloading any content you agree to abide by the terms of the [license](license).
 

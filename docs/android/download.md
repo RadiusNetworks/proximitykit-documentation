@@ -5,7 +5,7 @@ By downloading any content you agree to abide by the terms of the [license](lice
 
 ## Instructions for Android Studio
 
-Known working with Android Studio 0.5.2+ and Gradle 1.12
+Known working with Android Studio 0.5.2+ and Gradle 1.12+
 
 ### 1. Download and Include the Library
 

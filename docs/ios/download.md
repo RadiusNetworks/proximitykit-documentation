@@ -46,10 +46,7 @@ In `AppDelegate.h`:
 class AppDelegate: UIApplicationDelegate, RPKManagerDelegate
 ```
 
-Add a property for the manager and create it with the configuration. This kit's token and url are in the snippet below, just cut-n-paste:
-
-Create the manager and pass in the config. The Kit URL and Token can be obtained on the "Settings" page of your kit.
-
+Add a property for the manager and create it with the configuration. Create the manager and pass in the config.
 
 ```swift
 let rpkManager = RPKManager.managerWithDelegate(self, andConfig:[
@@ -57,6 +54,8 @@ let rpkManager = RPKManager.managerWithDelegate(self, andConfig:[
   "api_token": "MY_KIT_SDK_TOKEN",
 ]);
 ```
+
+_The Kit URL and Token can be obtained on the "Settings" page of your kit._
 
 ### Objective-C
 
@@ -70,7 +69,7 @@ In `AppDelegate.h`:
 @end
 ```
 
-Create the manager and pass in the config. The Kit URL and Token can be obtained on the "Settings" page of your kit.
+Create the manager and pass in the config.
 
 ```objective-c
 self.pkManager = [RPKManager managerWithDelegate:self andConfig:@{
@@ -79,6 +78,7 @@ self.pkManager = [RPKManager managerWithDelegate:self andConfig:@{
 }];
 ```
 
+_The Kit URL and Token can be obtained on the "Settings" page of your kit._
 
 ### Next Steps
 

@@ -59,7 +59,64 @@ For more details see our [getting started guide](getting_started).
 
 ### Set the Token and URL
 
-TODO: Example Code
+Implement the `ProximityKitSyncNotifier` on a custom `Application` subclass and
+add a singleton field for the `ProximityKitManager`.
+
+In `MyApplication` (or appropriately named subclass of `Application`):
+
+```java
+public class MyApplication extends Application
+                           implements ProximityKitSyncNotifier {
+    /**
+     * Singleton storage for an instance of the manager
+     */
+    private static ProximityKitManager pkManager = null;
+}
+```
+
+Create a map of the kit configuration settings:
+
+```java
+Map<String, String> settings = new HashMap<>();
+settings.put(
+        KitConfig.CONFIG_API_URL,
+        "https://proximitykit.radiusnetworks.com/api/kits/MY_KIT_ID"
+);
+settings.put(
+        KitConfig.CONFIG_API_TOKEN,
+        "MY_KIT_SDK_TOKEN"
+);
+```
+
+Alternatively, you can use a `Properties` instance:
+
+```java
+Properties settings = new Properties();
+settings.setProperty(
+        KitConfig.CONFIG_API_URL,
+        "https://proximitykit.radiusnetworks.com/api/kits/MY_KIT_ID"
+);
+settings.setProperty(
+        KitConfig.CONFIG_API_TOKEN,
+        "MY_KIT_SDK_TOKEN"
+);
+```
+
+Create a `KitConfig` with the settings and pass it to the manager, along with
+the application context:
+
+```java
+pkManager = ProximityKitManager.getInstance(
+        getApplicationContext(),
+        new KitConfig(settings)
+);
+```
+
+We strongly urge you to manage a singleton reference to the
+`ProximityKitManager` instance you create. Be sure to perform any necessary
+locking to ensure this contract is established.
+
+_The Kit URL and Token can be obtained on the "Settings" page of your kit._
 
 # Add Geofence Support
 

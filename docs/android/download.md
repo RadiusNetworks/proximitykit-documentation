@@ -285,3 +285,14 @@ if (servicesConnected()) {
     }
 }
 ```
+
+
+## Next Steps
+
+Now that you have Proximity Kit installed and configured, you need to integrate it with your app. Check out the [getting started guide](getting-started) for the next steps.
+
+General information can be found in our [API Overview Documentation](../overview).
+
+
+
+

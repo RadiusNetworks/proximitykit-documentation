@@ -1,16 +1,18 @@
-## Getting Started with Proximity Kit On iOS
+# Getting Started with Proximity Kit On iOS
 
 The iOS Proximity Kit SDK is built upon Apple's CoreLocation, extending the functionality and web management.
 
-For other platforms see our [overview](overview).
+For other platforms see the [Proximity Kit Overview Docs](overview).
 
-### Download the SDK
+# Download the SDK
 
 <a class="btn" href="https://proximitykit.radiusnetworks.com/docs/ios/download">iOS SDK Download and Install</a>
 
 Users of the Proximity Kit client library agree to abide by the license terms as specified for [iOS](ios/license).
 
 ### Additional Resources
+
+<a class="btn" href="ios/download">Download and Install Guide</a>
 
 <a class="btn" href="ios/getting-started">Getting Started</a>
 

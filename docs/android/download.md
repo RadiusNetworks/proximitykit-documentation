@@ -74,7 +74,7 @@ public class MyApplication extends Application
 }
 ```
 
-Create a map of the kit configuration settings:
+In the `onCreate` method, create a map of the kit configuration settings:
 
 ```java
 Map<String, String> settings = new HashMap<>();

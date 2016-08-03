@@ -27,6 +27,21 @@ Upon entering or leaving an Beacon or Geofence region, Proximity Kit notifies yo
 
 ---
 
+## Developing Apps with Proximity Kit
+
+Proximity Kit is avaliable on both iOS and Android. See below for details on getting started with your platform.
+
+<a class="btn" href="ios">iOS SDK Docs</a> <a class="btn" href="android">Android SDK Docs</a>
+
+---
+
+## RESTful Admin API
+
+The [Proximity Kit API](api) provides programmable access to the rich content about your App's Kit. It is designed to integrate Proximity Kit with other systems. It is specifically intended to provide access to the features and functionality available through the web interface.
+
+
+---
+
 ## Beacon Hardware
 
 While Proximity Kit will work with beacons that implment iBeacon™ Technology or that follow the [AltBeacon Standard](http://altbeacon.org/). This is subject to mobile device operating system and hardware support.
@@ -40,65 +55,21 @@ There are also software alternatives to broadcasting as a beacon, a few of our a
 
 ---
 
-## Getting Started with Proximity Kit On Android
-
-The Android Proximity Kit SDK is currently built upon our open source
-[Android Beacon Library](https://github.com/AltBeacon/android-beacon-library).
-Which is designed to work with the [AltBeacon Standard](http://altbeacon.org/).
-
-### Download the SDK
-
-<a class="btn" href="https://proximitykit.radiusnetworks.com/android-download">Android SDK Download and Install</a>
-
-Users of the Proximity Kit client library agree to abide by the license terms as specified for <a href="android/license">Android</a>.
-
-## Additional Resources
-
-<a class="btn" href="android/getting-started">Getting Started</a>
-<a class="btn" href="http://developer.radiusnetworks.com/proximitykit/android/docs/latest">SDK Reference</a>
-<a class="btn" href="https://github.com/RadiusNetworks/proximitykit-reference-android">Android Studio Reference App</a>
-
-<a class="btn" href="https://altbeacon.github.io/android-beacon-library/javadoc/index.html">Android Beacon Library Documentation</a>
-
----
-
-## Getting Started with Proximity Kit On iOS
-
-The iOS Proximity Kit SDK is built upon Apple's CoreLocation, extending the functionality and web management.
-
-### Download the SDK
-
-<a class="btn" href="https://proximitykit.radiusnetworks.com/download">iOS SDK Download and Install</a>
-
-Users of the Proximity Kit client library agree to abide by the license terms as specified for [iOS](ios/license).
-
-### Additional Resources
-
-<a class="btn" href="ios/getting-started">Getting Started</a> <a class="btn" href="ios/webbeacon">10 Minute Tutorial</a> <a class="btn" href="http://developer.radiusnetworks.com/proximitykit/ios/docs/">SDK Reference</a>
-
-<a class="btn" href="https://github.com/RadiusNetworks/proximity-kit-ios-example">iOS Reference App</a> <a class="btn" href="ios/tracking-beacons">Tracking Beacons Example</a>
-
----
 ## Activating Director
 
 After integrating Proximity Kit for iOS or/and Android, follow the steps below to activate Director and begin to monitor the health status of every beacon in your fleet.
 
-1. Login to your Radius Networks <a href="https://account.radiusnetworks.com"> Account</a> and click on "Team Settings".
-2. On the "Team Settings" page, click on "New Team", enter the "Team Name" and click on "create".
-3. From the account page, click on "Director", and select "Settings" from under the new team you just created.
-4. Under "SDK Access Tokens", click on "Generate Token".
-5. Copy the newly generated token.
-6. Go back to the accounts home page and click on "Proximity Kit".
-7. On the Proximity Kit page, click on "Create New Kit".
-8. Enter you "Kit name", ensure "Explicit Beacon Monitoring" is checked and paste the "Status Token" you copied from Director.
-9. Click save.
+1. Visit the the Radius Networks [Team Settings](https://account.radiusnetworks.com/teams) page
+2. If you don't have a team yet, click on "New Team" to create one
+3. From the account page, click on "[Director](https://director.radiusnetworks.com/)", and select "Settings" from under the new team you just created
+4. Under "SDK Access Tokens", click on "Generate Token"
+5. Copy the newly generated token
+6. Go back to the accounts home page and click on "[Proximity Kit](https://proximitykit.radiusnetworks.com/)"
+1. Navigate to your kit and click "Edit Kit"
+8. Paste the "Status Token" you copied from Director
+9. Click save
 
-You are done! Next time your app syncs with Proximity Kit, Status Kit will be automatically enabled.
-
----
-## RESTful Admin API
-
-The [Proximity Kit API](api) provides programmable access to the rich content about your App's Kit. It is designed to integrate Proximity Kit with other systems. It is specifically intended to provide access to the features and functionality available through the web interface.
+You are done! Next time your app syncs with Proximity Kit, Director Status Monitoring will be automatically enabled.
 
 ---
 

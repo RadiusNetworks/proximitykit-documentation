@@ -29,7 +29,7 @@ Upon entering or leaving an Beacon or Geofence region, Proximity Kit notifies yo
 
 ## Developing Apps with Proximity Kit
 
-Proximity Kit is avaliable on both iOS and Android. See below for details on getting started with your platform.
+Proximity Kit is available on both iOS and Android. See below for details on getting started with your platform.
 
 <a class="btn" href="ios">iOS SDK Docs</a> <a class="btn" href="android">Android SDK Docs</a>
 
@@ -44,9 +44,9 @@ The [Proximity Kit API](api) provides programmable access to the rich content ab
 
 ## Beacon Hardware
 
-While Proximity Kit will work with beacons that implment iBeacon™ Technology or that follow the [AltBeacon Standard](http://altbeacon.org/). This is subject to mobile device operating system and hardware support.
+While Proximity Kit will work with beacons that implement iBeacon™ Technology or that follow the [AltBeacon Standard](http://altbeacon.org/). This is subject to mobile device operating system and hardware support.
 
-We do build our own beacons and believe they are the best beacon hardware out there. That is avaliable in the [Radius Networks Store](http://store.radiusnetworks.com/).
+We do build our own beacons and believe they are the best beacon hardware out there. That is available in the [Radius Networks Store](http://store.radiusnetworks.com/).
 
 There are also software alternatives to broadcasting as a beacon, a few of our apps include [Locate for iOS](http://store.radiusnetworks.com/collections/all/products/locate-ibeacon-app), [QuickBeacon](http://store.radiusnetworks.com/collections/software/products/quickbeacon) and [MacBeacon](http://store.radiusnetworks.com/collections/all/products/macbeacon).
 
@@ -55,6 +55,13 @@ There are also software alternatives to broadcasting as a beacon, a few of our a
 
 ---
 
+## Activating Director
+
+If you are using Radius Networks's Director for beacon deployment tracking and monitoring you can configure Proximity Kit to update status of beacons as it detects them.
+
+<a class="btn" href="director">Activating Director for Proximity Kit</a>
+
+---
 
 ## Still need a hand?
 

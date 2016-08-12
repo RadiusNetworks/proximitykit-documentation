@@ -7,7 +7,7 @@ By downloading any content you agree to abide by the terms of the [license](lice
 
 ## Manual Install
 
-<a href=https://github.com/RadiusNetworks/proximitykit-ios/releases/latest" class="btn">Download the Proximity Kit framework</a>
+<a href="https://github.com/RadiusNetworks/proximitykit-ios/releases/latest" class="btn">Download the Proximity Kit framework</a>
 
 Once you have downloaded and unzipped the framework simply drag `ProximityKit.framework` to your application's project in Xcode.
 

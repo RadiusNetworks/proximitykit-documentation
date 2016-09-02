@@ -315,7 +315,7 @@ Curl Example:
 
 ## Creating a beacon
 
-To create a beacon make a POST request to the `/api/v1/beacons/:id`
+To create a beacon make a POST request to the `/api/v1/beacons`
 
 Parameters
 
@@ -495,9 +495,9 @@ Parameters
 
 Parameter    | Description                      | &nbsp;
 ---------    | ------------                     | ------
-`beacon_id`  | The ID of the parent beacon      | Required
 `key`        | The key value                    | Required
 `value`      | The data associated with the key | Required
+`beacon_id`  | The ID of the parent beacon      |
 
 `PUT /api/v1/beacon_attributes/:id`
 
@@ -596,7 +596,7 @@ Curl Example:
 
 ## Creating a Circle Overlay
 
-To create a circle overlay make a POST request to the `/api/v1/circle_overlays/:id`
+To create a circle overlay make a POST request to the `/api/v1/circle_overlays`
 
 Parameters
 

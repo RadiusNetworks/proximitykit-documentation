@@ -315,7 +315,7 @@ Curl Example:
 
 ## Creating a beacon
 
-To create a beacon make a POST request to the `/api/v1/beacons/:id`
+To create a beacon make a POST request to the `/api/v1/beacons`
 
 Parameters
 
@@ -495,9 +495,9 @@ Parameters
 
 Parameter    | Description                      | &nbsp;
 ---------    | ------------                     | ------
-`beacon_id`  | The ID of the parent beacon      | Required
 `key`        | The key value                    | Required
 `value`      | The data associated with the key | Required
+`beacon_id`  | The ID of the parent beacon      |
 
 `PUT /api/v1/beacon_attributes/:id`
 
@@ -596,7 +596,7 @@ Curl Example:
 
 ## Creating a Circle Overlay
 
-To create a circle overlay make a POST request to the `/api/v1/circle_overlays/:id`
+To create a circle overlay make a POST request to the `/api/v1/circle_overlays`
 
 Parameters
 
@@ -691,3 +691,132 @@ Curl Example:
        https://proximitykit.radiusnetworks.com/api/v1/circle_overlays/7
 < HTTP/1.1 204 No Content
 ```
+
+# Circle Overlay Attributes
+
+## Circle Overlay Attributes Resource
+
+`GET /api/v1/circle_overlay_attributes/:id`
+
+This will return a list of circle overlay attributes.
+
+```
+{
+  "circle_overlay_attributes": [
+    {
+      "id": 4,
+      "key": "population",
+      "value": "eleventy billion"
+    }
+  ]
+}
+```
+
+Curl Example:
+
+```
+% curl -s \
+       -X GET \
+       -H 'Authorization: Token token="secret"' \
+       -H "Content-Type: application/vnd.api+json" \
+       https://proximitykit.radiusnetworks.com/api/v1/circle_overlay_attributes/4
+```
+
+## Creating an attribute
+
+To create an attribute make a post request to `api/v1/circle_overlay_attributes`
+
+Parameters
+
+Parameter           | Description                             | &nbsp;
+------------------- | --------------------------------------- | ------
+`circle_overlay_id` | The ID of the associated circle overlay | Required
+`key`               | The key value                           |
+`value`             | The data associated with the key        |
+
+
+`POST /api/v1/circle_overlay_attributes`
+
+Example:
+
+```json
+{
+  "circle_overlay_attributes": [
+    {
+      "circle_overlay_id": 5,
+      "key": "venue",
+      "value": "spaceship"
+    }
+  ]
+}
+```
+
+```
+% curl -sv \
+       -X POST \
+       -H 'Authorization: Token token="secret"' \
+       -H "Content-Type: application/vnd.api+json" \
+       -d '{ "circle_overlay_attributes": [ { "circle_overlay_id": 5, "key": "venue", "value": "spaceship" } ]}' \
+       https://proximitykit.radiusnetworks.com/api/v1/circle_overlay_attributes
+< HTTP/1.1 201 Created
+< Location: https://proximitykit.radiusnetworks.com/api/v1/circle_overlay_attributes/5.5
+```
+
+## Updating an attribute
+
+To update an attribute make a post request to `api/v1/circle_overlay_attributes/:id`.
+
+Parameters
+
+Parameter           | Description                         | &nbsp;
+------------------- | ----------------------------------- | ------
+`key`               | The key value                       | Required
+`value`             | The data associated with the key    | Required
+`circle_overlay_id` | The ID of the parent circle overlay |
+
+`PUT /api/v1/circle_overlay_attributes/:id`
+
+Example:
+
+```json
+{
+  "circle_overlay_attributes": [
+    {
+      "key": "venue",
+      "value": "swimming pool room"
+    }
+  ]
+}
+```
+
+Curl Example:
+
+```
+% curl -sv \
+       -X PUT \
+       -H 'Authorization: Token token="secret"' \
+       -H "Content-Type: application/vnd.api+json" \
+       -d '{ "circle_overlay_attributes": [ { "key": "venue", "value": "swiming pool room" } ]}' \
+       https://proximitykit.radiusnetworks.com/api/v1/circle_overlay_attributes/5
+< HTTP/1.1 204 No Content
+```
+
+## Deleting an attribute
+
+To delete an attribute make a delete request to the individual `circle_overlay_attribute_url`.
+
+`DELETE /api/v1/circle_overlay_attributes/:id`
+
+Curl Example:
+
+```
+% curl -sv \
+       -X DELETE \
+       -H 'Authorization: Token token="secret"' \
+       -H "Content-Type: application/vnd.api+json" \
+       https://proximitykit.radiusnetworks.com/api/v1/circle_overlay_attributes/4
+< HTTP/1.1 204 No Content
+```
+
+
+

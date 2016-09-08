@@ -23,16 +23,17 @@ The value of this key will be displayed to the user under Settings in the "App e
 
 An example explanation for a resturant app might be: "This app will use your location information to notify you about and access services avaliable in the resturant"
 
-## Link to SQLite
+## Link to Shared Libraries
 
-Proximity Kit uses SQLite internally, but just needs the default library included on iOS. So we need to link to it in the project.
-
-You need to link with libsqlite3.dylib.
+Proximity Kit uses CoreLocation, CoreBluetooth and SQLite internally. So we need to link to them in your project.
 
 - Select the App's target in Xcode
 - Choose "Build Phases"
 - Under the "Link Binary With Libraries" section click the '+' to add another library
-- Choose `libsqlite3.dylib` and click "Add"
+- Choose the following and click "Add"
+  - `CoreLocation`
+  - `CoreBluetooth`
+  - `libsqlite3.dylib`
 
 ## Creating a Location Manager
 

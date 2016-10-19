@@ -8,13 +8,16 @@ Note: This functionality is currently iOS only. Android support coming soon, if 
 
 # Enable Integration in your App
 
-To enable integration in the SDK, you will need to set the Urban Airship manager on the Proximity Kit manager. This is a simple one-liner:
+To enable integration in the SDK, you will need to add the reference code provided in our `RPKAirshipAdapter` class, and start that up. This class will listen to NSNotifications broadcast by the `RPKManager`.
 
 ```objc
-[self.pkManager setAirship: [UAirship shared]];
+RPKAirshipAdapter *pkAdapter = RPKAirshipAdapter;
+[pkAdapter start];
 ```
 
-That's it. Now the Proximity Kit SDK will look for the meta data attributes and handle the rest of the integration on the actual device. Now all you need to do is set tags or events.
+The source for this reference is avaliable [here](ios/urban-airship/).
+
+Now the Proximity Kit/Urban Airship Adapter will listen for the meta data attributes and handle the rest of the integration on the actual device. Now all you need to do is set tags or events.
 
 # Tags
 

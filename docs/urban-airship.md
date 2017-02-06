@@ -8,10 +8,13 @@ Note: This functionality is currently iOS only. Android support coming soon, if 
 
 # Enable Integration in your App
 
-To enable integration in the SDK, you will need to add the reference code provided in our `RPKAirshipAdapter` class, and start that up. This class will listen to NSNotifications broadcast by the `RPKManager`.
+To enable integration in the SDK, you will need to add the reference code provided in our `RPKAirshipAdapter` class, and start that up. This class will listen to NSNotifications broadcast by the `RPKManager`. Note that the `RPKAirshipAdapter` must have a strong reference so it is not garbage collected.
 
 ```objc
-RPKAirshipAdapter *pkAdapter = [[RPKAirshipAdapter alloc] init];
+@property (nonatomic, strong) RPKAirshipAdapter *pkAdapter;
+...
+
+self.pkAdapter = [[RPKAirshipAdapter alloc] init];
 [pkAdapter start];
 ```
 

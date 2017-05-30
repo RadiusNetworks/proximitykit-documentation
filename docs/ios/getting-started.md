@@ -25,7 +25,7 @@ An example explanation for a resturant app might be: "This app will use your loc
 
 ## Add Bluetooth Peripheral Usage String to Info.plist
 
-Starting in iOS 10, all apps need to include the "Privacy - Bluetooth Peripheral Usage Description" in `Info.plist`. Add the key `NSBluetoothPeripheralUsageDescription` with a message appropriate to your app. This is needed for Proximity Kit to detect Bluetooth beacons.
+Starting in iOS 10, all apps submitted to the App Store need to include the "Privacy - Bluetooth Peripheral Usage Description" in `Info.plist`. Add the key `NSBluetoothPeripheralUsageDescription` with a message appropriate to your app. Although this is not needed for Proximity Kit to detect Bluetooth beacons, iTunes Connect rejects your app if this key is not specified.
 
 ## Link to SQLite
 

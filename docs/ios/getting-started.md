@@ -11,7 +11,7 @@ Note: Users of the Proximity Kit client library agree to abide by the license te
 
 ## Add Location Usage String to Info.plist
 
-Starting in iOS 8, all apps need to include the "location usage string" in their `Info.plist`
+Starting in iOS 8, all apps need to include the "Privacy - Location Always Usage Description" in their `Info.plist`.
 
 You will need to add the following key:
 
@@ -22,6 +22,10 @@ This is needed so that Proximity Kit can continue to monitor for beacons and geo
 The value of this key will be displayed to the user under Settings in the "App explanation". You will want to populate this string a short explanation why the user would want to allow sharing of their current location and proximity to beacons.
 
 An example explanation for a resturant app might be: "This app will use your location information to notify you about and access services avaliable in the resturant"
+
+## Add Bluetooth Peripheral Usage String to Info.plist
+
+Starting in iOS 10, all apps need to include the "Privacy - Bluetooth Peripheral Usage Description" in `Info.plist`. Add the key `NSBluetoothPeripheralUsageDescription` with a message appropriate to your app. This is needed for Proximity Kit to detect Bluetooth beacons.
 
 ## Link to SQLite
 
@@ -101,6 +105,3 @@ Note: If the location is set to coordinates within your fence when the simulator
 ## Simulating beacons
 
 While you can't yet simulate an beacon in the iPhone Simulator, you can use [MacBeacon](http://www.radiusnetworks.com/macbeacon-app.html). It makes testing iBeacon functionality easy, particularly since your Mac can broadcast as an iBeacon while running your app directly from Xcode. This is a great way to explore how the beacon behaves while in the Xcode debugger.
-
-
-

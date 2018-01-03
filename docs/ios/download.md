@@ -49,7 +49,7 @@ class AppDelegate: UIApplicationDelegate, RPKManagerDelegate
 Add a property for the manager and create it with the configuration. Create the manager and pass in the config.
 
 ```swift
-let rpkManager = RPKManager.managerWithDelegate(self, andConfig:[
+let rpkManager = RPKManager(delegate:self, andConfig:[
   "kit_url": "https://proximitykit.radiusnetworks.com/api/kits/MY_KIT_ID",
   "api_token": "MY_KIT_SDK_TOKEN",
 ]);
